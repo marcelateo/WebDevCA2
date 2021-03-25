@@ -1,6 +1,23 @@
-const http = require('http');
+var http = require("http");
+const axios = require("axios").default;
 
-http.createServer((req, res)=>{
-  res.write("Hello world \n"); // write a response
-  res.end(); //end the response
-}).listen(8000); // listen for requests on port 8000
+//create a server object:
+http
+  .createServer(function(req, res) {
+    res.write(users.join("\n")); //display the list of users on the page
+    res.end(); //end the response
+  })
+  .listen(8080); //the server object listens on port 8080
+
+let users = [];
+
+(async function getNames() {
+  try {
+    const { data } = await axios.get(
+      "https://jsonplaceholder.typicode.com/users"
+    );
+    users = data.map(user => user.name);
+  } catch (error) {
+    console.log(error);
+  }
+})();
