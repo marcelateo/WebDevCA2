@@ -1,23 +1,19 @@
-var http = require("http");
-const axios = require("axios").default;
+const http = require('http'),
+axios = require('axios'),
+logger = require('morgan'),
+cors = require('cors'),
+express = require('express'),
+bodyParser = require('body-parser');
 
-//create a server object:
-http
-  .createServer(function(req, res) {
-    res.write(users.join("\n")); //display the list of users on the page
-    res.end(); //end the response
-  })
-  .listen(8080); //the server object listens on port 8080
+var app = express();
+var port = 8000;
 
-let users = [];
+app.use(bodyParser.json())
+app.use(logger('tiny'));
+app.use(require('./routes'));
 
-(async function getNames() {
-  try {
-    const { data } = await axios.get(
-      "https://jsonplaceholder.typicode.com/users"
-    );
-    users = data.map(user => user.name);
-  } catch (error) {
-    console.log(error);
-  }
-})();
+const dbURI = "mongodb://localhost/test";
+
+mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
+        .then((result) => console.log('connected to db'))
+        .catch((err) => console.log(err));
