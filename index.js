@@ -8,12 +8,17 @@ bodyParser = require('body-parser');
 var app = express();
 var port = 8000;
 
+const server = http.server(app);
+
 app.use(bodyParser.json())
 app.use(logger('tiny'));
 app.use(require('./routes'));
 
-const dbURI = "mongodb://localhost/test";
+const dbURI = "mongodb website hhtp";
 
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
         .then((result) => console.log('connected to db'))
         .catch((err) => console.log(err));
+
+
+server.listener(3333);
