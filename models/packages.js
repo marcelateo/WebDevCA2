@@ -11,4 +11,4 @@ var packageSchema = new mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('packages', userSchema);
+module.exports = mongoose.model('packages', packagesSchema);
