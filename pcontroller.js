@@ -14,7 +14,7 @@ exports.createPack = function(req, res) {
 
 //read packages
 exports.getPack = function(req, res) {
-  User.find({}, function (err, packages) {
+  Pack.find({}, function (err, packages) {
     if (err) {
       res.status(400).json(err); 
     } 
