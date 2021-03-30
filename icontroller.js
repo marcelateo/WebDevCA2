@@ -1,9 +1,9 @@
 exports.getWorld = function(req,res){
-    res.json({result: 'Hello World from Controller'});
+    res.json({result: 'Hello from Controller'});
 }
 
 exports.getWorldParams = function(req,res){
-    res.json({message: 'Hello BScBest!', data: [
+    res.json({message: 'Welcome to Where to Go Next', data: [
         req.params.foo,
         req.params.bar
     ]});
