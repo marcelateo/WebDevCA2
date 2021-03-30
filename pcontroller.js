@@ -1,9 +1,9 @@
-var User = require('./models/packages');
+var Pack = require('./models/packages');
 
 //create packages
-exports.createPack = function(req, res) { 
-    var newpackage = new Pack(req.body);
-    newpackage.save(function (err, package) { 
+exports.createPackages = function(req, res) { 
+    var newPackages = new Pack(req.body);
+    newPackage.save(function (err, package) { 
         if (err) { 
             res.status (400).json(err);
         }
@@ -13,7 +13,7 @@ exports.createPack = function(req, res) {
 };
 
 //read packages
-exports.getPack = function(req, res) {
+exports.getPackages = function(req, res) {
   Pack.find({}, function (err, packages) {
     if (err) {
       res.status(400).json(err); 

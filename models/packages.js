@@ -1,14 +1,16 @@
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
-var packageSchema = new mongoose.Schema({ 
-    id:{ type: Number, unique: true},
-    user: { 
-        type: String,
-        enum: ['Single', 'Couple', 'Family', 'Friends'],
-    places: String,
-    package: String,
-    price: Number
-    }
+//Create schema
+
+const PackagesSchema = new Schema({
+
+ name: {type: String,
+        enum: ['Single', 'Couple', 'Family', 'Friends']},
+ places: String,
+ package: String,
+ price: Number
+
 });
-
-module.exports = mongoose.model('Pack', packagesSchema);
+const Packages = mongoose.model('packages', PackagesSchema);
+module.exports = Packages;

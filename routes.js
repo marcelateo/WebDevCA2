@@ -10,7 +10,7 @@ router.get('/hello/:foo/:bar', itemCtrl.getWorldParams);
 
 router.post('/hello', itemCtrl.postWorld);
 
-router.post('/packages', packagesCtrl.createPack);
-router.get('/packages', packagesCtrl.getPack);
+router.post('/packages', packagesCtrl.createPackages);
+router.get('/packages', packagesCtrl.getPackages);
 
 module.exports = router;
