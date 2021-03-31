@@ -14,7 +14,7 @@ app.use(bodyParser.json())
 app.use(logger('tiny'));
 app.use(require('./routes'));
 
-const dbURI = "mongo "mongodb+srv://cluster0.8t6tj.mongodb.net/myFirstDatabase" --username test";
+const dbURI = "mongodb+srv://test:<password>@cluster0.8t6tj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
         .then((result) => console.log('connected to db'))
