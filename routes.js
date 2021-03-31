@@ -1,14 +1,16 @@
 const express = require('express'),
 router = express.Router();
 
-var iCtrl= require('./item-controller'),
-packageCtrl = require('./package-controller');
+var itemCtrl = require('./item-controller'),
+userCtrl = require('./user-controller');
 
+router.get('/hello', itemCtrl.getWorld);
 
-router.get('/hello', iCtrl.getWorld);
+router.get('/hello/:foo/:bar', itemCtrl.getWorldParams);
 
-router.get('/hello/:foo/:bar', iCtrl.getWorldParams);
+router.post('/hello', itemCtrl.postWorld);
 
-router.post('/hello', iCtrl.postWorld);
+router.post('/packages', userCtrl.createUser);
+router.get('/packages', userCtrl.getUsers);
 
 module.exports = router;
