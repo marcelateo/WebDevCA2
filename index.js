@@ -23,7 +23,6 @@ mongoose.connection.on('connected', () => {
     console.log('MongoDB is successfully connected');
 });
 
-
 app.listen(port, function(err){
 console.log('Listening on port:' + port);
 });
