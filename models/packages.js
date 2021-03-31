@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 //Create schema
 
-const PackagesSchema = new Schema({
+const packagesSchema = new Schema({
 
 [
    {
@@ -99,5 +99,5 @@ const PackagesSchema = new Schema({
 ]
 
 });
-const Packages = mongoose.model('packages', PackagesSchema);
+const packages = mongoose.model('packages', packagesSchema);
 module.exports = Packages;
