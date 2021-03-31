@@ -1,4 +1,4 @@
-import Pack, { find } from './models/package';//need to check this path
+var Pack = require('./models/package');//need to check this path
 
 export function createPack(req,res){
 var newpackage = new Pack(req.body);
