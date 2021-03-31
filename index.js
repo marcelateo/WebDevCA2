@@ -14,7 +14,7 @@ app.use(bodyParser.json())
 app.use(logger('tiny'));
 app.use(require('./routes'));
 
-const dbURI = "mongodb website hhtp";
+const dbURI = "mongo "mongodb+srv://cluster0.8t6tj.mongodb.net/myFirstDatabase" --username test";
 
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
         .then((result) => console.log('connected to db'))
