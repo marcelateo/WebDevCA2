@@ -5,8 +5,7 @@ const Schema = mongoose.Schema;
 
 const packagesSchema = new Schema({
 
-[
-   {
+   
       "@name": "FOR SINGLE",
       "place": [
          {
@@ -25,8 +24,8 @@ const packagesSchema = new Schema({
             "price": "2.230"
          }
       ]
-   },
-   {
+   ,
+   
       "@name": "FOR COUPLE",
       "place": [
          {
@@ -55,8 +54,8 @@ const packagesSchema = new Schema({
             "price": "2.850"
          }
       ]
-   },
-   {
+   ,
+   
       "@name": "FOR FAMILY",
       "place": [
          {
@@ -75,8 +74,8 @@ const packagesSchema = new Schema({
             "price": "6.850"
          }
       ]
-   },
-   {
+   ,
+   
       "@name": "FOR FRIENDS",
       "place": [
          {
@@ -95,9 +94,6 @@ const packagesSchema = new Schema({
             "price": "3.560"
          }
       ]
-   }
-]
-
-});
+   });
 const packages = mongoose.model('packages', packagesSchema);
-module.exports = Packages;
+module.exports = packages;
