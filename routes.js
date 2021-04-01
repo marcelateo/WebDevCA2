@@ -12,5 +12,7 @@ router.post('/hello', itemCtrl.postWorld);
 
 router.post('/packages', userCtrl.createUser);
 router.get('/packages', userCtrl.getUsers);
+//read one package
+router.get('/packages/:id', userCtrl.getUser);
 
 module.exports = router;
