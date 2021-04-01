@@ -24,10 +24,30 @@ exports.getUsers = function(req, res) {
 
 //read just one package
 exports.getUser = function(req, res) {
-  User.findOne({_id: req.params.id}, function (err, users) {
+  User.findOne({_id: req.params.id}, function (err, user) {
     if (err) {
       res.status(400).json(err); 
     } 
-    res.json(users);
+    res.json(user);
+  }); 
+};
+
+//update a package
+exports.updateUser = function(req, res) {
+  User.findOneAndUpdate({_id: req.params.id}, req.body, {new: true}, function (err, user) {
+    if (err) {
+      res.status(400).json(err); 
+    } 
+    res.json(user);
+  }); 
+};
+
+//delete one package
+exports.deleteUser = function(req, res) {
+  User.findByIdAndRemove({_id: req.params.id}, function (err, user) {
+    if (err) {
+      res.status(400).json(err); 
+    } 
+    res.json(user);
   }); 
 };
