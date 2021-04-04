@@ -1,4 +1,4 @@
-var User = require('./models/user');
+var User = require('./models/package');
 
 //create packages
 exports.createUser = function(req, res) { 
