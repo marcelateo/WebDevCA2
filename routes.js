@@ -1,14 +1,8 @@
 const express = require('express'),
 router = express.Router();
 
-var itemCtrl = require('./item-controller'),
-userCtrl = require('./user-controller');
-
-router.get('/hello', itemCtrl.getWorld);
-
-router.get('/hello/:foo/:bar', itemCtrl.getWorldParams);
-
-router.post('/hello', itemCtrl.postWorld);
+//create and set the variables
+var userCtrl = require('./user-controller');
 
 router.post('/packages', userCtrl.createUser);
 router.get('/packages', userCtrl.getUsers);
@@ -18,4 +12,12 @@ router.get('/packages/:id', userCtrl.getUser);
 router.put('/packages/:id', userCtrl.updateUser);
 router.delete('/packages/:id', userCtrl.deleteUser);
 
+//all files will be uploads
+module.exports.UPLOAD_PATH = "uploads";
+//define multer
+var multer = require("multer");
+//create instance of multer
+var upload = multer({dest: module.exports.UPLOAD_PATH});
+//define image controler
+var imageCtrl = require('./image-controller');
 module.exports = router;
