@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Where To Go Next...</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/bootstrap.min.css.map" rel="stylesheet">
+    <link href="css/WhereToGoNext.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-info static-top">
+    <div class="container">
+        <a href="#"><img id="logo" src="img/next-logo.jpg"></a>
+      <a class="navbar-brand" href="#">Where To Go Next...</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h1 class="mt-5">Welcome to ...Where To Go Next</h1>
+        <p class="lead">Here you can find the perfect holiday's package deals to enjoy with someone or just by yourself!</p>
+       </div>
+      <div id="results" class="col-lg-8 order-1 mb-4"></div>
+            <div class="col-lg-4 order-2">
+                <form enctype="application/json" action="/post/json" method="post">
+                    <div class="form-group">
+                        <select class="form-control" name="sec_n">
+                            <option value="0">FOR SINGLE</option>
+                            <option value="1">FOR COUPLE</option>
+                            <option value="2">FOR FAMILY</option>
+                            <option value="3">FOR FRIENDS</option>
+                        </select>
+                        <input class="form-control mt-3" type="text" name="item" placeholder="Item" required>
+                        <input class="form-control mt-3" type="text" name="comment" placeholder="Comment" required>
+                        <input class="form-control mt-3" type="text" name="price" placeholder="Price" required pattern="\d+(\.\d{2})?">
+                        <button type="submit" style ="background-color: rgb(26, 151, 182);" class="btn btn-primary btn-block mt-3">Submit</button>
+                    </div>
+                </form>
+                 <button id="delete" style= "background-color: rgb(145, 62, 62);" class="btn btn-danger btn-block mt-3">Delete</button>
+                <p class="text-muted text-center">To delete a place, click the required row first</p>            
+    </div>
+    </div>
+    <p3 style="font-size:80%;">* Those are ready-to-go packages prices. For family of 4 packages each extra or less person will be 10%. Fr friends of 2.</p3>
+  </div>
+
+<!--footer -->
+<footer class="bg-info text-center text-lg-start">
+    <hr>
+  <!-- Grid container -->
+  <div class="container p-2">
+    <!--Grid row-->
+    <div class="row">
+      <!--Grid column-->
+      <div class="col-lg-6 col-md-12 mb-3 mb-md-0">
+        <h5 class="text-uppercase">About Us</h5>
+
+        <p>
+         WhereToGoNext.com is all about making your trip unforgetable. 
+		 This web application was developed to help to put your mind at ease when planing a trip. 
+		 Based on who is going and what you expect from your destination, we are here to offer you the perfect ready-to-go packages
+        </p>
+      </div>
+      <!--Grid column-->
+
+      <!--Grid column-->
+      <div class="col-lg-6 col-md-12 mb-3 mb-md-0">
+        <h5 class="text-uppercase">Contact Us</h5>
+
+        <p>
+          Opening Hours: Tuesday - Saturday ( 9 to 5 o'clock).
+		  Address: 30 West Moreland - Dublin/Ireland
+		  Phone: (01)868798240
+        </p>
+      </div>
+      <!--Grid column-->
+    </div>
+    <!--Grid row-->
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-2"style="background-color: rgba(0, 0, 0, 0.2)">
+    © 2020 Copyright:
+    <a class="text-dark" href="#">WhereToGoNext.com</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+ 
+  <!-- Bootstrap core JavaScript -->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery.min.map"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js.map"></script>
+  <script src="js/table.js"></script>
+  <script src="js/WhereToGoNext.js"></script>
+
+
+</body>
+
+</html>
