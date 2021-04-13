@@ -20,8 +20,10 @@ var multer = require("multer");
 var upload = multer({dest: module.exports.UPLOAD_PATH});
 //define image controler
 var imageCtrl = require('./image-controller');
-
+//upload one or all images stored
 router.post('/images', upload.single('image'), imageCtrl.uploadImage);
 router.get('/images', imageCtrl.getImages);
+router.get('/images/:id', imageCtrl.getImage);
+router.delete('/images/:id', imageCtrl.deleteImage);
 
 module.exports = router;
