@@ -1,0 +1,54 @@
+html {
+  position: relative;
+  min-height: 100%;
+  
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 0px;
+  font-family: "Brush Script MT", cursive;
+}
+
+h1 {
+  color: rgba(8, 85, 129, 0.877);
+  font-family: "Brush Script MT", cursive;
+}
+
+p{
+color: rgb(10, 53, 80);
+font-family: "Brush Script MT", cursive;
+
+}
+#logo {
+  display: inline-block;
+  margin: 9px; /* margin: 20px was off */
+  height: 50px;
+  width: auto; /* correct proportions to specified height */
+  border-radius: 60%; /* makes it a circle */
+}
+table, th, td {
+     border-collapse: collapse;
+     border: 1px solid black;
+     text-align: center;
+     
+}
+ table {
+     border-collapse: collapse;
+     width:100%;
+     background-color: #c5dbf585;}
+
+ td, th {
+     border: 3px solid #04225a;
+     padding: 0.5rem;
+     text-align: left;
+     
+}
+ th {
+     font-weight: bold;
+     background-color: #2cb0e067;
+     text-align: center;
+}
+.selected {
+            background-color: #0b6088;
+            color: rgb(11, 78, 122);
+}
