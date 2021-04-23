@@ -10,12 +10,13 @@ dotenv=require("dotenv");
 
 //instances
 var app = express();
-var port = 8000;
+var port = process.env.PORT ||8000;
 dotenv.config();
 
 app.use(bodyParser.json())
 app.use(logger('tiny'));
 app.use(require('./routes'));
+app.use(express.static('view'));
 
 app.listen(port, function(err){
     console.log('Listening on port: ' + port);
