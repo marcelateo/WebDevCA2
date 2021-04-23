@@ -5,11 +5,13 @@ logger = require('morgan'),
 cors = require('cors'),
 express = require('express'),
 bodyParser = require('body-parser');
-mongoose = require('mongoose');
+mongoose = require('mongoose'),
+dotenv=require("dotenv");
 
 //instances
 var app = express();
 var port = 8000;
+dotenv.config();
 
 app.use(bodyParser.json())
 app.use(logger('tiny'));
@@ -19,7 +21,7 @@ app.listen(port, function(err){
     console.log('Listening on port: ' + port);
 });
 
-const dbURI = "mongodb://localhost/test";
+const dbURI = process.env.DB_URL;
 
 //mongoose is used to connect the app to the mongodb
 mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedTopology:true})
